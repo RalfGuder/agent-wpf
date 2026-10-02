@@ -1,0 +1,32 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AgentWpf.Application/AgentWpf.Application.csproj" />
+    <Project Path="src/AgentWpf.Domain/AgentWpf.Domain.csproj" />
+    <Project Path="src/AgentWpf.Infrastructure.FlaUI/AgentWpf.Infrastructure.FlaUI.csproj" />
+    <Project Path="src/AgentWpf.Protocol/AgentWpf.Protocol.csproj" />
+    <Project Path="src/AgentWpf/AgentWpf.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AgentWpf.Application.Tests/AgentWpf.Application.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="tests/AgentWpf.Cli.Tests/AgentWpf.Cli.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="tests/AgentWpf.Domain.Tests/AgentWpf.Domain.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="tests/AgentWpf.E2E/AgentWpf.E2E.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="tests/AgentWpf.Infrastructure.FlaUI.Tests/AgentWpf.Infrastructure.FlaUI.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="tests/AgentWpf.Protocol.Tests/AgentWpf.Protocol.Tests.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="tests/AgentWpf.TestApp/AgentWpf.TestApp.csproj">
+      <Platform Project="x64" />
+    </Project>
+  </Folder>
+</Solution>

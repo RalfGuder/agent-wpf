@@ -1,0 +1,6 @@
+<Window x:Class="AgentWpf.TestApp.ToolWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Werkzeuge" Width="260" Height="120" AutomationProperties.AutomationId="ToolWindow">
+  <Button Content="Werkzeug A" AutomationProperties.AutomationId="btnToolA" Margin="10" />
+</Window>

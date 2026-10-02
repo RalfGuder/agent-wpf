@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <AssemblyName>agent-wpf</AssemblyName>
+    <RootNamespace>AgentWpf</RootNamespace>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="AgentWpf.Cli.Tests" />
+    <PackageReference Include="System.CommandLine" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgentWpf.Application\AgentWpf.Application.csproj" />
+    <ProjectReference Include="..\AgentWpf.Infrastructure.FlaUI\AgentWpf.Infrastructure.FlaUI.csproj" />
+    <ProjectReference Include="..\AgentWpf.Protocol\AgentWpf.Protocol.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\skill-data\**\*.md" LogicalName="skill-data/%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

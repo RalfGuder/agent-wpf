@@ -1,0 +1,48 @@
+<Window x:Class="AgentWpf.TestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Testanwendung" Width="900" Height="700" AutomationProperties.AutomationId="MainWindow">
+  <DockPanel>
+    <Menu DockPanel.Dock="Top" AutomationProperties.AutomationId="mainMenu">
+      <MenuItem Header="_Datei" AutomationProperties.AutomationId="menuFile">
+        <MenuItem Header="_Öffnen" AutomationProperties.AutomationId="menuOpen" Click="OnMenuOpen" />
+        <MenuItem Header="_Beenden" AutomationProperties.AutomationId="menuExit" Click="OnMenuExit" />
+      </MenuItem>
+    </Menu>
+    <StackPanel DockPanel.Dock="Left" Width="340" Margin="8">
+      <TextBlock Text="Name" />
+      <TextBox x:Name="txtName" AutomationProperties.AutomationId="txtName" AutomationProperties.Name="Name" />
+      <Button x:Name="btnGreet" Content="Begrüßen" AutomationProperties.AutomationId="btnGreet" Click="OnGreet" Margin="0,4" />
+      <TextBlock x:Name="lblResult" AutomationProperties.AutomationId="lblResult" Text="-" />
+      <CheckBox x:Name="chkSplit" Content="Splitten" AutomationProperties.AutomationId="chkSplit" Margin="0,8,0,0" />
+      <RadioButton x:Name="rbSmall" Content="Klein" GroupName="size" AutomationProperties.AutomationId="rbSmall" IsChecked="True" />
+      <RadioButton x:Name="rbLarge" Content="Groß" GroupName="size" AutomationProperties.AutomationId="rbLarge" />
+      <ComboBox x:Name="cmbColor" AutomationProperties.AutomationId="cmbColor" AutomationProperties.Name="Farbe" SelectionChanged="OnColorChanged" Margin="0,8,0,0">
+        <ComboBoxItem Content="Rot" />
+        <ComboBoxItem Content="Grün" />
+        <ComboBoxItem Content="Blau" />
+        <ComboBoxItem Content="Gelb" />
+      </ComboBox>
+      <TextBlock x:Name="lblColor" AutomationProperties.AutomationId="lblColor" Text="Farbe: -" />
+      <Button Content="Dialog öffnen" AutomationProperties.AutomationId="btnDialog" Click="OnDialog" Margin="0,8,0,0" />
+      <Button Content="Werkzeuge öffnen" AutomationProperties.AutomationId="btnSecond" Click="OnSecond" Margin="0,4" />
+      <Button Content="Verzögert" AutomationProperties.AutomationId="btnDelayed" Click="OnDelayed" />
+      <Button x:Name="btnLate" Content="Fertig erschienen" AutomationProperties.AutomationId="btnLate" Visibility="Collapsed" />
+      <Button Content="Gesperrt" AutomationProperties.AutomationId="btnDisabled" IsEnabled="False" Margin="0,4" />
+      <TreeView AutomationProperties.AutomationId="tree" Height="90">
+        <TreeViewItem Header="Projekt" AutomationProperties.AutomationId="treeRoot">
+          <TreeViewItem Header="Leistungsverzeichnis" />
+          <TreeViewItem Header="Kalkulation" />
+        </TreeViewItem>
+      </TreeView>
+    </StackPanel>
+    <DataGrid x:Name="gridOrders" AutomationProperties.AutomationId="gridOrders" AutomationProperties.Name="Aufträge"
+              AutoGenerateColumns="False" IsReadOnly="True" EnableRowVirtualization="True"
+              VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Nr" Binding="{Binding Number}" />
+        <DataGridTextColumn Header="Kunde" Binding="{Binding Customer}" />
+      </DataGrid.Columns>
+    </DataGrid>
+  </DockPanel>
+</Window>

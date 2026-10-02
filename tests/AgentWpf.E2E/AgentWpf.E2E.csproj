@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter" />
+    <PackageReference Include="NUnit.Analyzers" />
+    <PackageReference Include="Shouldly" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Build order only: the tests drive the real executables. -->
+    <ProjectReference Include="..\..\src\AgentWpf\AgentWpf.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\AgentWpf.TestApp\AgentWpf.TestApp.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+</Project>
